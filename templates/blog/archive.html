@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+{% block title %}
+  向京阳博客 | 文章存档
+{% endblock %}
+
+{% block path %}
+  当前位置&nbsp;:&nbsp;<a href = "{% url 'home'%}">首页&nbsp;</a>»&nbsp;文章存档
+{% endblock %}
+
+{% block content %}
+	{% if archive %}
+    {% for key, value in archive.items %}
+      <div class="archive">
+        <div id="archives">
+          <h3 class='al_year'>{{ key|date:'Y' }}年{{ key|date:'m' }}月</h3>
+          <blockquote class="al_month_list">
+            {% for i in value %}
+              <p>
+                <a href="{{ i.get_absolute_url }}">
+                  <p>
+                    <span>{{ i.publish_time|date:'m' }}月{{ i.publish_time|date:'d' }}日</span>
+                    <span style="margin-left:10px;">{{ i }}</span>
+                  </p>
+                </a>
+              </p>
+            {% endfor %}
+          </blockquote>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+
+{% block side %}
+	{% include "blog/_side.html" %}
+{% endblock %}

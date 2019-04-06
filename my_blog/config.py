@@ -1,0 +1,5 @@
+EMAIL = {
+    'host': '',
+    'user': '',
+    'password': ''
+}
