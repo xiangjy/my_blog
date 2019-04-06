@@ -6,7 +6,7 @@ from glob import glob
 from logging.handlers import TimedRotatingFileHandler
 
 
-class SepLogFileHandlerMixin(TimedRotatingFileHandler):
+class BlogLogFileHandlerMixin(TimedRotatingFileHandler):
 
     def doRollover(self):
         """
@@ -56,7 +56,7 @@ class SepLogFileHandlerMixin(TimedRotatingFileHandler):
         newRolloverAt = self.computeRollover(currentTime)
         while newRolloverAt <= currentTime:
             newRolloverAt = newRolloverAt + self.interval
-        #If DST changes and midnight or weekly rollover, adjust for this.
+        # If DST changes and midnight or weekly rollover, adjust for this.
         if (self.when == 'MIDNIGHT' or self.when.startswith('W')) and not self.utc:
             dstAtRollover = time.localtime(newRolloverAt)[-1]
             if dstNow != dstAtRollover:
@@ -68,11 +68,10 @@ class SepLogFileHandlerMixin(TimedRotatingFileHandler):
         self.rolloverAt = newRolloverAt
 
 
-class SepLogTimedRotatingFileHandler(SepLogFileHandlerMixin):
+class BlogLogTimedRotatingFileHandler(BlogLogFileHandlerMixin):
     """
-    Sep 进程安全日志处理handler
+    Blog 进程安全日志处理handler
     """
     def __init__(self, filename, when='h', interval=1, backupCount=20, encoding=None, delay=False, utc=False):
         self.delay = delay
-        super(SepLogTimedRotatingFileHandler, self).__init__(filename, when, interval, backupCount, encoding, delay,
-                                                             utc)
+        super(BlogLogTimedRotatingFileHandler, self).__init__(filename, when, interval, backupCount, encoding, delay, utc)

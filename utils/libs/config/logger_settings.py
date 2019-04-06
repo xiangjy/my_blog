@@ -6,10 +6,10 @@ from os.path import dirname as d
 lib_name = os.path.basename(d(d(d(__file__))))
 # logging
 LOG_ROOT = '.'
-PROJECT_INFO_LOG = "sep.trace_info"
-PROJECT_ERROR_LOG = "sep.trace_error"
-PROJECT_EXCEPTION_LOG = "sep.trace_exception"
-PROJECT_HTTPCLIENT_LOG = "sep.trace_httpclient"
+PROJECT_INFO_LOG = "blog.trace_info"
+PROJECT_ERROR_LOG = "blog.trace_error"
+PROJECT_EXCEPTION_LOG = "blog.trace_exception"
+PROJECT_HTTPCLIENT_LOG = "blog.trace_httpclient"
 
 LOGGING = {
     'version': 1,
@@ -38,28 +38,28 @@ LOGGING = {
         },
         PROJECT_INFO_LOG: {
             'level': 'DEBUG',
-            'class': 'utils.libs.logger.SepLogTimedRotatingFileHandler',
+            'class': 'utils.libs.logger.BlogLogTimedRotatingFileHandler',
             'filename': os.path.join(LOG_ROOT, "logs/trace_info.log"),
             'formatter': 'verbose',
             'when': 'midnight',
         },
         PROJECT_ERROR_LOG: {
             'level': 'ERROR',
-            'class': 'utils.libs.logger.SepLogTimedRotatingFileHandler',
+            'class': 'utils.libs.logger.BlogLogTimedRotatingFileHandler',
             'filename': os.path.join(LOG_ROOT, "logs/trace_error.log"),
             'formatter': 'verbose',
             'when': 'midnight',
         },
         PROJECT_EXCEPTION_LOG: {
             'level': 'ERROR',
-            'class': 'utils.libs.logger.SepLogTimedRotatingFileHandler',
+            'class': 'utils.libs.logger.BlogLogTimedRotatingFileHandler',
             'filename': os.path.join(LOG_ROOT, "logs/trace_exception.log"),
             'formatter': 'exception',
             'when': 'midnight',
         },
         PROJECT_HTTPCLIENT_LOG: {
             'level': 'INFO',
-            'class': 'utils.libs.logger.SepLogTimedRotatingFileHandler',
+            'class': 'utils.libs.logger.BlogLogTimedRotatingFileHandler',
             'filename': os.path.join(LOG_ROOT, "logs/trace_httpclient.log"),
             'formatter': 'trace_service',
             'when': 'midnight',

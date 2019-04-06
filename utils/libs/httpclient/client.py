@@ -23,12 +23,12 @@ class RequestClient(object):
     _request_session = requests.Session()     # 带有会话的请求,可以使用连接池
 
     @classmethod
-    def _get_headers(cls, add_sep_headers, headers):
+    def _get_headers(cls, add_blog_headers, headers):
         default_headers = {}
-        if add_sep_headers:  # 默认的头部
+        if add_blog_headers:  # 默认的头部
             default_headers = {
                 "Accept-Language": "zh_CN",
-                "User-Agent": "sep",
+                "User-Agent": "blog",
                 "Connection": "Keep-Alive",
             }
         if headers and isinstance(headers, dict):
@@ -38,7 +38,7 @@ class RequestClient(object):
 
     @classmethod
     def query(cls, url, method="POST", params=None, data={}, files={}, timeout=3, retry=1,
-              headers=None, add_sep_headers=False, record_params=True, stream=False, **kwargs):
+              headers=None, add_blog_headers=False, record_params=True, stream=False, **kwargs):
         """
             :params url: 要访问的url
             :param params: 参数In URL
@@ -53,7 +53,7 @@ class RequestClient(object):
         times = 0
         response = None
         # get headers
-        default_headers = cls._get_headers(add_sep_headers, headers)
+        default_headers = cls._get_headers(add_blog_headers, headers)
 
         # method 只是支持以下几种
         if method not in ["post", "get", "put", "delete", "options", "head"]:

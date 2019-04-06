@@ -739,12 +739,12 @@ if print_ is None:
                 data = data.encode(fp.encoding, errors)
             fp.write(data)
         want_unicode = False
-        sep = kwargs.pop("sep", None)
-        if sep is not None:
-            if isinstance(sep, unicode):
+        blog = kwargs.pop("blog", None)
+        if blog is not None:
+            if isinstance(blog, unicode):
                 want_unicode = True
-            elif not isinstance(sep, str):
-                raise TypeError("sep must be None or a string")
+            elif not isinstance(blog, str):
+                raise TypeError("blog must be None or a string")
         end = kwargs.pop("end", None)
         if end is not None:
             if isinstance(end, unicode):
@@ -764,13 +764,13 @@ if print_ is None:
         else:
             newline = "\n"
             space = " "
-        if sep is None:
-            sep = space
+        if blog is None:
+            blog = space
         if end is None:
             end = newline
         for i, arg in enumerate(args):
             if i:
-                write(sep)
+                write(blog)
             write(arg)
         write(end)
 if sys.version_info[:2] < (3, 3):
