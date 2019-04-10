@@ -5,7 +5,7 @@ new Valine({
   notify: false,
   verify: false,
   avatar: 'mp',
-  placeholder: "let's go go <(￣︶￣)↗[GO!]",
+  placeholder: "Let's go go <(￣︶￣)↗",
   visitor: true
 });
 
