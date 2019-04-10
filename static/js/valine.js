@@ -1,13 +1,12 @@
 new Valine({
-  av: AV,
-  el:'#vcomments',
-  appId:'2pSOFwxMUB0mHbMHpCH9bhRL-gzGzoHsz',
-  appKey:'zkBqvFzJ7NswaFW6oGICyKpq',
-  notify:false,
+  el: '#vcomments',
+  appId: 'vfkQTRHnRtt8qrAFeGpVdB8E-gzGzoHsz',
+  appKey: 'jrvAjkgyB0r0Ad4lW25UqqGu',
+  notify: false,
   verify: false,
-  avatar:'mp',
-  placeholder:'ヾﾉ≧∀≦)o来啊，快活啊!',
-  visitor:true,
+  avatar: 'mp',
+  placeholder: "let's go go <(￣︶￣)↗[GO!]",
+  visitor: true
 });
 
 $(".v .vbtn").html("提交");
