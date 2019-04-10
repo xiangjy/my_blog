@@ -11,7 +11,7 @@ class Command(BaseCommand):
     def notify_baidu(self):
         articles = Article.objects.filter(status=BlogStatus.PUBLISHED).order_by('-id')
         urls = [DOMAIN + article.get_absolute_url() for article in articles]
-        api = 'http://data.zz.baidu.com/urls?site=yangsihan.com&token=7tNlHmCq6GVPoYfb'
+        api = 'http://data.zz.baidu.com/urls?site=blog.mmdry.com&token=ua6abDescQwly9Zl'
         response = requests.post(api, data='\n'.join(urls))
         print (response.content.decode())
 
