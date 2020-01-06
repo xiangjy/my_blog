@@ -73,8 +73,8 @@ class MusicAdmin(admin.ModelAdmin):
         }
 
 
-admin.site.site_title = '博客管理'
-admin.site.site_header = '博客后台管理平台'
+admin.site.site_title = '笔记管理'
+admin.site.site_header = '笔记后台管理平台'
 admin.site.register(Author)
 admin.site.register(Tag)
 admin.site.register(Classification)

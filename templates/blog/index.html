@@ -3,19 +3,19 @@
 {% load custom_markdown %}
 {% block title %}
   {% if is_home %}
-    向京阳博客
+    向京阳笔记
   {% endif %}
   {% if is_arch_month %}
-    向京阳博客 | {{ year }}年 | {{ month }}月
+    向京阳笔记 | {{ year }}年 | {{ month }}月
   {% endif%}
   {% if is_classfi %}
-    向京阳博客 | {{ classfi }}
+    向京阳笔记 | {{ classfi }}
   {% endif%}
   {% if is_tag  %}
-    向京阳博客 | {{ tag }}
+    向京阳笔记 | {{ tag }}
   {% endif%}
   {% if is_search  %}
-    向京阳博客 | 查找有关{{ s }}的文章
+    向京阳笔记 | 查找有关{{ s }}的文章
   {% endif %}
 {% endblock %}
 

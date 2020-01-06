@@ -52,7 +52,7 @@ def upload_rich_file(request):
 
 def home(request):
     """
-    博客首页
+    笔记首页
     """
     is_home = True
     articles = Article.objects.filter(status=BlogStatus.PUBLISHED).order_by("-publish_time")
@@ -71,7 +71,7 @@ def home(request):
 
 def detail(request, year, month, day, id):
     """
-    博客详情
+    笔记详情
     """
     try:
         article = Article.objects.get(id=id)

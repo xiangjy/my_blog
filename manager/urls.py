@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^logout/?$', views.logout_view, name="logout_view"),
     url(r'^change-pw/?$', views.change_passwd_view, name="change_password"),
 
-    # 博客
+    # 笔记
     url(r'^$', views.blog_list_view, name="blog_list"),
     url(r'^blog-list/?$', views.blog_list_view, name="blog_list"),
     url(r'^blog-create/?$', views.blog_create_view, name="blog_create"),

@@ -14,7 +14,7 @@
           </button>
         </li>
         <li class="list-inline-item">
-          <h4 class="page-title">博客列表</h4>
+          <h4 class="page-title">笔记列表</h4>
         </li>
       </ul>
     </div>
@@ -82,13 +82,13 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="myLargeModalLabel">删除博客</h4>
+              <h4 class="modal-title" id="myLargeModalLabel">删除笔记</h4>
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <form>
               {% csrf_token %}
               <div class="modal-body">
-                <h4>确认删除博客？</h4>
+                <h4>确认删除笔记？</h4>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-inverse" data-dismiss="modal">取消</button>
@@ -116,7 +116,7 @@
     $("#del_blogs_modal").modal('show');
   }
 
-  // 批量删除博客
+  // 批量删除笔记
   function delete_blogs() {
     $("#del_blogs_modal").modal('hide');
     var formData = $("#item_ids_form").serialize();

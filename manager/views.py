@@ -93,7 +93,7 @@ def change_passwd_view(request):
 @login_required
 def blog_list_view(request):
     """
-    博客列表
+    笔记列表
     :param request:
     :return:
     """
@@ -122,7 +122,7 @@ def blog_list_view(request):
 @login_required
 def blog_create_view(request):
     """
-    博客添加
+    笔记添加
     """
     tp = "manager/create_blog.html"
     auhtors = Author.objects.values("id", "name")
@@ -165,13 +165,13 @@ def blog_create_view(request):
 @login_required
 def blog_edit_view(request, item_id):
     """
-    博客编辑
+    笔记编辑
     :param request:
     :return:
     """
     article = Article.objects.filter(id=item_id).first()
     if not article:
-        messages.warning(request, "此博客不存在")
+        messages.warning(request, "此笔记不存在")
         return HttpResponseRedirect(reverse('blog_list'))
 
     selected_tags = article.get_tags()
@@ -219,7 +219,7 @@ def blog_edit_view(request, item_id):
 @login_required
 def blog_del_view(request):
     """
-    删除博客
+    删除笔记
     """
     item_ids = request.POST.getlist('item_ids')
     if not item_ids:

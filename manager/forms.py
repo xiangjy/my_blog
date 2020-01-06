@@ -7,7 +7,7 @@ from article.constants import EditorKind, BlogStatus
 
 
 class SearchBlogForm(forms.Form):
-    title = forms.CharField(label=u'博客标题', required=False)
+    title = forms.CharField(label=u'笔记标题', required=False)
 
 
 class LoginForm(forms.Form):
